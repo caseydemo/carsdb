@@ -36,7 +36,7 @@
 		  	$db_user = $url['user'];
 		  	$db_pass = $url['pass'];
 		  	$db_name = substr($url['path'], 1);
-var_dump($url);
+//var_dump($url);
 
 
 
