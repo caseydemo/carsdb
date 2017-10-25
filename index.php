@@ -54,11 +54,11 @@ var_dump($url);
 	
 		function getInventory() {
 	    $request = pg_query(getDb(), 
-	        "SELECT i.id, i.year, i.mileage, mo.name as model, mo.doors, ma.name as make, c.name as color
+	        "SELECT i.id, i.year, i.mileage, mo.name as model, mo.doors, ma.name as make, c.name as colors
 	        FROM inventory i
 	        JOIN models mo ON i.model_id = mo.id
 	        JOIN makes ma ON mo.make_id = ma.id
-	        JOIN color c ON i.color_id = c.id;
+	        JOIN colors c ON i.color_id = c.id;
 	    ");
 	    return pg_fetch_all($request);
 	  	}
