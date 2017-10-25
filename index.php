@@ -13,11 +13,11 @@
 <body class="container">
 
 	<?php
-		  function getDb() {
+		function getDb() {
 
-		  	// COPY AND BREAK THIS OUT
+		// COPY AND BREAK THIS OUT
 
-		  	// brings in the .env file 
+		 	// brings in the .env file 
 		  	// this is used by the DOTENV adon brought in from composer
 		  	if(file_exists('.env')){	
 		  		require __DIR__ . '/vendor/autoload.php';
@@ -25,9 +25,11 @@
 		  		$dotenv->load();
 		  	}
 
-		  	$raw_url = 'postgres://zeghbpygvfxihj:3987d6f7a90aa7e7c55c7d3fd6696d7fa5c6ef7af286858af420a54b6f4b3894@ec2-54-243-43-72.compute-1.amazonaws.com:5432/d27952o26jla2l';
+		  	// $raw_url = 'postgres://zeghbpygvfxihj:3987d6f7a90aa7e7c55c7d3fd6696d7fa5c6ef7af286858af420a54b6f4b3894@ec2-54-243-43-72.compute-1.amazonaws.com:5432/d27952o26jla2l';
 
-		  	$url = parse_url(getenv("DATABASE_URL"));
+		  	//$url = parse_url(getenv("DATABASE_URL"));
+
+		  	$url = parse_url("postgres://zeghbpygvfxihj:3987d6f7a90aa7e7c55c7d3fd6696d7fa5c6ef7af286858af420a54b6f4b3894@ec2-54-243-43-72.compute-1.amazonaws.com:5432/d27952o26jla2l");
 
 		  	$db_port = $url['port'];
 		  	$db_host = $url['host'];
